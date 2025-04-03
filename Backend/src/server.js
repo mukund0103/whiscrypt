@@ -1,5 +1,24 @@
 const http = require("http");
 const app = require("./app");
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const connectDB = require("./db");
+const reportRoutes = require("./routes/reportRoutes");
+
+dotenv.config();
+const app = express();
+
+// Connect to MongoDB
+connectDB();
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+// Routes
+
 
 // Load environment variables
 const PORT = process.env.PORT || 5000;

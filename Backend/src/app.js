@@ -25,6 +25,7 @@ connectDB(); // Connect to MongoDB
 // 🔹 Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/reports", reportRoutes);
 
 // 🔹 Error Handling Middleware
 app.use((err, req, res, next) => {
